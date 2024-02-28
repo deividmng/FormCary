@@ -1,0 +1,24 @@
+
+
+.container {
+    display: grid;
+    grid-template-columns: calc(100% - 70%) auto;
+
+    .img-form {
+        position: relative; 
+        img {
+            max-width: 100vh; 
+            max-height: 100vh;
+            height: auto;
+            display: block; 
+            margin: 0;
+        }
+
+        .caruchy-logo {
+            position: absolute;
+            top: 20%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    }
+}

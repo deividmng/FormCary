@@ -1,0 +1,135 @@
+.formulario {
+  background-color: white;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-header {
+    grid-column: span 2;
+    text-align: start;
+    color: #333;
+    margin-left: 20px;
+    margin-bottom: 40px;
+  }
+
+  .all-input {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .input-container {
+    position: relative;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: -10px;
+    margin-left: 10px;
+    color: green;
+
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transform-origin: top left;
+    transform: translateY(0%);
+  }
+
+  .input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-top: 0;
+    border-right: 0;
+
+    &:focus {
+      outline: none;
+      border: 1px solid green;
+      border-top: 0;
+      border-right: 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    &:valid {
+      border-color: green;
+      box-shadow: 0 2px 4px rgba(0, 128, 0, 0.5); /* Sombra verde cuando es válido */
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: red;
+      box-shadow: none; /* Elimina la sombra cuando es inválido y está vacío */
+    }
+  }
+
+  .label-moved {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  .create-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    grid-column: span 2;
+
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    grid-column: span 2;
+
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+}
+
+.input-down {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    max-width: 223px;
+  }
+
+  p {
+    text-align: start;
+  }
+
+  .login {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+  }
+}
