@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="/src/app.css" />
   </head>
   <body>
@@ -23,11 +24,16 @@
           </div>
         </div>
 
-        <form action="#" class="formulario">
-          <div class="inputs-form">
-            <h1 class="form-header">Contact Us</h1>
+        <form action="#" class="formulario" id="formulario">
+          <div class="inputs-form" id="inputs-form">
+            <h1 class="form-header" id="contact">
+              This is not a real online service! You know you need something
+              like this in your life to help you realize your deepest dreams.
+              Sign up now to get started. You know you want to. Contact Us
+            </h1>
+            <p class="success-message" id="success"></p>
 
-            <div class="all-input">
+            <div class="all-input" id="inputs-form-clear">
               <div class="input-container">
                 <label class="f-name" for="f-name">First name</label>
                 <input
@@ -36,6 +42,8 @@
                   name="f-name"
                   id="f-name"
                   required
+                  minlength="3"
+                  maxlength="20"
                 />
                 <!-- <span>
                                 First name
@@ -83,11 +91,11 @@
                   name="f-number"
                   id="f-number"
                   pattern="[0-9]*"
+                  minlength="10"
+                  maxlength="15"
                   required
                 />
-                <!-- <span>
-                                First name
-                            </span> -->
+                <div class="error" id="phone-error"></div>
               </div>
 
               <div class="input-container">
@@ -96,12 +104,13 @@
                   type="password"
                   name="user-password"
                   id="user-password"
-                  pattern=".{8,}"
+                  pattern="(?=.*[A-Z])(?=.*\d).{8,}"
                   title="Password must be at least 8 characters long."
                   required
                   oninput="checkPasswordMatch()"
                   placeholder=""
                 />
+                <div class="error" id="password-safe"></div>
               </div>
 
               <div class="input-container">
@@ -116,14 +125,12 @@
                   oninput="checkPasswordMatch()"
                   placeholder=""
                 />
-                <!-- <span>
-                                First name
-                            </span> -->
+
                 <div class="error" id="password-match-error"></div>
               </div>
             </div>
-            <section class="input-down">
-              <button type="submit" class="create-button">
+            <section class="input-down" id="section-submit">
+              <button type="button" class="create-button" id="submitButton">
                 Create Acccount
               </button>
 
@@ -136,6 +143,6 @@
         </form>
       </div>
     </main>
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
