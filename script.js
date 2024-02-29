@@ -147,3 +147,22 @@ function moveLabel(fieldId) {
     }
   }
   
+
+ 
+/// Password show || hide
+
+function togglePasswordVisibility(inputId, errorId) {
+    var passwordInput = document.getElementById(inputId);
+    var toggleButton = passwordInput.closest('.input-container').querySelector(".toggle-password");
+    var errorDiv = document.getElementById(errorId);
+    var eyeIcon = toggleButton.querySelector('.eye');
+
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.src = "./assets/img/eye-outline.svg";
+        errorDiv.style.display = "none";
+    } else {
+        passwordInput.type = "password";
+        eyeIcon.src = "./assets/img/eye-off-outline.svg";
+    }
+}

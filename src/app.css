@@ -466,4 +466,8 @@ template {
 
 button:hover {
   background-color: #13b952;
+}
+
+.eye {
+  max-height: 15px;
 }/*# sourceMappingURL=app.css.map */

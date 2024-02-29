@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    
     <link rel="stylesheet" href="/src/app.css" />
   </head>
   <body>
@@ -101,33 +102,46 @@
               <div class="input-container">
                 <label for="user-password">PASSWORD</label>
                 <input
-                  type="password"
-                  name="user-password"
-                  id="user-password"
-                  pattern="(?=.*[A-Z])(?=.*\d).{8,}"
-                  title="Password must be at least 8 characters long."
-                  required
-                  oninput="checkPasswordMatch()"
-                  placeholder=""
+                    type="password"
+                    name="user-password"
+                    id="user-password"
+                    pattern="(?=.*[A-Z])(?=.*\d).{8,}"
+                    title="Password must be at least 8 characters long."
+                    required
+                    oninput="checkPasswordMatch()"
+                    placeholder=""
                 />
+                <span
+                    class="toggle-password"
+                    onclick="togglePasswordVisibility('user-password')"
+                    style="display: flex; align-items: center; justify-content: flex-end; width: 100%;"
+                >
+                    <img class="eye" src="./assets/img/eye-outline.svg" alt="img eye">
+                </span>
                 <div class="error" id="password-safe"></div>
-              </div>
-
+            </div>
+            
               <div class="input-container">
                 <label for="user-password-confirm">CONFIRM PASSWORD</label>
                 <input
-                  type="password"
-                  name="user-password-confirm"
-                  id="user-password-confirm"
-                  pattern=".{8,}"
-                  title="Password must be at least 8 characters long."
-                  required
-                  oninput="checkPasswordMatch()"
-                  placeholder=""
+                    type="password"
+                    name="user-password-confirm"
+                    id="user-password-confirm"
+                    pattern=".{8,}"
+                    title="Password must be at least 8 characters long."
+                    required
+                    oninput="checkPasswordMatch()"
+                    placeholder=""
                 />
-
+                <span 
+                    class="toggle-password"
+                    onclick="togglePasswordVisibility('user-password-confirm', 'password-match-error')"
+                    style="display: flex;  justify-content: flex-end;"
+                >
+                    <img class="eye" src="./assets/img/eye-outline.svg" alt="img eye">
+                </span>
                 <div class="error" id="password-match-error"></div>
-              </div>
+            </div>
             </div>
             <section class="input-down" id="section-submit">
               <button type="button" class="create-button" id="submitButton">
